@@ -2,21 +2,31 @@
  * Created by carlos-valarezo on 28/04/2016.
  */
 var React = require('react');
-import Story from './Story';
+import StoryContainer from './StoryContainer';
 
 var StoriesContainer = React.createClass({
-    propTypes :
-    {
-        storiesList:React.PropTypes.array
-    },
     render:function()
     {
-        var stories = this.props.storiesList.map((story) => {
-            return <Story headline={story.headline} title={story.title} summary={story.summary} link={story.assetUri} image={story.media.images.index}/>
-        });
+
         return(
-            <div>
-                {stories}
+            <div className="">
+
+                <StoryContainer id="type-a-top-story-1"
+                    stories={
+                        this.props.storiesList.filter((story) => story.type === "type-a-top-story-1")
+                    }
+                />
+                <StoryContainer id="type-a-story-1"
+                    stories={
+                        this.props.storiesList.filter((story) => story.type === "type-a-story-1")
+                    }
+                />
+                <StoryContainer id="type-a-headline-list-1"
+                                stories={
+                        this.props.storiesList.filter((story) => story.type === "type-a-headline-list-1")
+                    }
+                />
+
             </div>
 
         );
