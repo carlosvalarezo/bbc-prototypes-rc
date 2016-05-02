@@ -6,21 +6,16 @@ import Story from './Story';
 
 var StoryContainer = React.createClass({
 
-
-
     render:function()
     {
         var stories = this.props.stories.map((story) =>
         {
-            return <Story story={story.items}/>
+            return <Story story={story.items} key={story.title}/>
         });
         return(
-            <div>
-            <div>{this.props.id}</div>
-
-        <div>{stories}
+             <div>
+                 {stories}
             </div>
-                </div>
         );
 
     }
