@@ -10,7 +10,22 @@ var StoryContainer = React.createClass({
     {
         var stories = this.props.stories.map((story) =>
         {
-            return <Story story={story.items} key={story.title}/>
+            return (this.props.id === "type-a-top-story-1")
+                ?
+                <div className={this.props.id + "-container"}>
+                    <Story id={this.props.id} story={story.items} key={story.title}/>
+                </div>
+                :
+                ((this.props.id === "type-a-story-1")
+                        ?
+                        <div className={this.props.id + "-container"}>
+                            <Story id={this.props.id} story={story.items} key={story.title}/>
+                        </div>
+                        :
+                        <div className={this.props.id + "-container"}>
+                            <Story id={this.props.id} story={story.items} key={story.title}/>
+                        </div>
+                )
         });
         return(
              <div>

@@ -12,9 +12,9 @@ var MediaContainer = React.createClass({
         {
             return (key === "images")
                 ?
-                <Image image={this.props.media[key]}/>
+                <Image id={this.props.id} image={this.props.media[key]}/>
                 :
-                <Video video={this.props.media[key]}/>;
+                <Video id={this.props.id} video={this.props.media[key]}/>;
         });
 
         return(

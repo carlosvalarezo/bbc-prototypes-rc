@@ -9,19 +9,24 @@ var Story = React.createClass ( {
     render: function () {
 
         var story = this.props.story.map((item) => {
+            console.log("id story = " + this.props.id)
             return(
                 <article>
-                    <div className={"top__story__container"}>
-                            <div className="top__story__title">
-                                <a href={item.headline}>{item.headline} {item.title}</a>
+                    <a href={item.assetUri}>
+                        <div>
+                            <div className={this.props.id + "-title"}>
+                                {item.headline} {item.title}
                             </div>
-                            <div>{item.summary}</div>
-                         <MediaContainer media={item.media} />
-                    </div>
+                            <div>
+                                {item.summary}
+                            </div>
+                            <MediaContainer id={this.props.id} media={item.media} />
+                        </div>
+                    </a>
                 </article>
             );
         })
-        return<div> {story} </div>;
+        return( <div> {story} </div> );
     }
 } );
 export default Story;
