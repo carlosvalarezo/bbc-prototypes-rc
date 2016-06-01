@@ -25,7 +25,6 @@ var SportsContainer = React.createClass({
         }).catch(function (ex) {
             console.log('parsing failed', ex)
         })
-
     },
 
     render:function(){
