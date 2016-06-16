@@ -14,7 +14,7 @@ var Story = React.createClass ( {
             console.log("assetUri = " + item.assetUri);
             return(
                 <article>
-                    <a href={item.assetUri}>
+                    /*<a href={item.assetUri}>*/
                         <div>
                             <div className={this.props.id + "-title"}>
                                 {item.headline} {item.title}
@@ -25,8 +25,8 @@ var Story = React.createClass ( {
                             <MediaContainer id={this.props.id} media={item.media} />
 
                         </div>
-                    </a>
-                    <SharingButton urlStory={item.assetUri} />
+                    /*</a>*/
+                    <SharingButton onclick={window.plugins.socialsharing.share('http://www.bbc.co.uk' + item.assetUri)} />
                 </article>
 
             );
