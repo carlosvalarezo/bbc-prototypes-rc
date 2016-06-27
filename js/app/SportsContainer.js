@@ -4,7 +4,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var whatwg = require('whatwg-fetch');
+var Router = require('react-router' ).Router;
+var Route = require('react-router' ).Route;
+var history = requiere('react-router').browserHistory;
+
 import StoriesContainer from './StoriesContainer';
+import FullStory from './FullStory';
+
+
+
 
 var SportsContainer = React.createClass({
     getInitialState:function()
@@ -29,9 +37,18 @@ var SportsContainer = React.createClass({
 
     render:function(){
         return (
-            <StoriesContainer storiesList={this.state.storiesList}/>
+            <div>
+                <StoriesContainer storiesList={this.state.storiesList}/>
+                {this.props.children}
+            </div>
         );
     }
 });
 
-ReactDOM.render(<SportsContainer />, document.getElementById("root"));
+ReactDOM.render((
+    <Router history={history}>
+        <Route path="/" component={SportsContainer}>
+            <Route path="/fullstory" component={FullStory}/>
+        </Route>
+    </Router>), document.getElementById("root"));
+                                                 

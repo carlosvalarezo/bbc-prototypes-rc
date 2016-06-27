@@ -2,7 +2,11 @@
  * Created by carlos-valarezo on 02/05/2016.
  */
 var React = require('react');
+var Router = require('react-router' ).Router;
+var Route = require('react-router' ).Route;
 import Story from './Story';
+import FullStory from './FullStory';
+
 
 var StoryContainer = React.createClass({
 
@@ -28,8 +32,8 @@ var StoryContainer = React.createClass({
                 )
         });
         return(
-             <div>
-                 {stories}
+            <div>
+                {stories}
             </div>
         );
 

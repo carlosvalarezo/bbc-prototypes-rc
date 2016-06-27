@@ -14,7 +14,7 @@ var SharingButton = React.createClass({
         let address = this.props.shareLink;
         let sharingButton = (
             <div>
-                <button onClick={function() {window.plugins.socialsharing.share('http://www.bbc.co.uk' + address)}}>
+                <button onClick={function() {window.plugins.socialsharing.share(address)}}>
                     share!
                 </button>
             </div>
